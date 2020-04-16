@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenue</title>
+</head>
+<body>
+    <h1>Bien le bonjour !</h1>
+    <p>Nous sommes heureux de vous rencontrer {{prenom}}.<br>
+        Nous espérons que vous êtes
+        {% if sexe == "Femme" %}
+            heureuse
+        {% else %}
+        heureux
+        {% endif %}
+        du haut de vos {{age}} ans !
+    </p>
+
+    <h2>Vive les crepes !</h2>
+    {% load static %}
+    <img src="{% static 'blog/crepes.jpg' %}" alt="Des crepes délicieuses" />
+
+    <h3>Plein de couleurs pour vous :</h3>
+
+    <ul>
+        {% for code,nom in couleurs.items %}
+            <li style="color: #{{code}}">{{nom}}</li>
+        {% empty %}
+            <p class="empty">Liste vide, tristesse.</p>
+        {% endfor %}
+    </ul>
+    <a href="{% url "bienvenue" "Homme" 42 "Bob" %}">
+        Lien vers la version Homme 42 Bob.
+    <br>
+    </a>
+    <a href="{% url "accueil" %}">Lien vers l'accueil.</a>
+
+
+</body>
+</html>
