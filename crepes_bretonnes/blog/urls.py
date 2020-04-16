@@ -19,7 +19,7 @@ from . import views
 
 urlpatterns = [
     path('accueil', views.home, name="accueil"),
-    path('article/<int:id_article>$', views.view_article, name='afficher_article'),
+    path('article/<int:id_article>', views.view_article, name='afficher_article'),
     path('articles/<str:tag>', views.list_articles_by_tag),
     path('articles/<int:year>/<int:month>', views.list_articles),
     path('redirection', views.view_redirection),
