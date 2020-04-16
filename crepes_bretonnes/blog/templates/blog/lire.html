@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lire</title>
+</head>
+<body>
+    <h1>{{ article.titre }}</h1>
+    <h2>Catégorie : {{article.categorie.nom}}</h2>
+    <p class="infos">Rédigé par {{ article.auteur }}, le {{ article.date|date:"DATE_FORMAT" }}</p>
+    <div class="contenu">{{ article.contenu|linebreaks }}</div>
+</body>
+</html>
