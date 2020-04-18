@@ -5,17 +5,10 @@
     <title>Accueil</title>
 </head>
 <body>
-<h1>Bienvenue sur le blog des crêpes bretonnes !</h1>
-
-{% for article in derniers_articles %}
-    <div class="article">
-    	<h3>{{ article.titre }}</h3>
-    	<p>{{ article.contenu|truncatewords_html:80 }}</p>
-        <p><a href="{% url 'lire' article.id %}">Lire la suite</a></p>
-    </div>
-{% empty %}
-    <p>Aucun article.</p>
-{% endfor %}
-
+    <h1>Bienvenue sur le blog des crêpes bretonnes !</h1>
+    <h3>Les articles</h3>
+    <p>Vous pouvez cliquer <a href="{% url "tousArticles" %}">ici</a> pour voir la liste de tous les articles.</p>
+    <h3>Les reporters</h3>
+    <p>En cliquant <a href="{% url "contributeurs" %}">ici</a> vous pourrez voir les bouilles de nos contributeurs.</p>
 </body>
 </html>
