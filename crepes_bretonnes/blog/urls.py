@@ -23,5 +23,12 @@ urlpatterns = [
     path('bienvenue/<str:sexe>/<int:age>/<str:prenom>/', views.bienvenue, name='bienvenue'),
     path('tousArticles', views.articles, name="tousArticles"),
     path('article/<int:id>-<slug:slug>', views.lecture, name="lire_article"),
-    path('contributeurs', views.contributeurs, name="contributeurs")
+    path('contributeurs', views.contributeurs, name="contributeurs"),
+    path('contactUs/', views.contact_us, name='contact_us'),
+    path('accueil/proposerArticle', views.proposer_article, name='proposer_article'),
+    path('contributeurs/inscription', views.inscription, name="inscription"),
+    path('accueil/newUser', views.new_user, name="new_user"),
+
+    path('connexion', views.connexion, name='connexion'),
+    path('deconnexion', views.deconnexion, name="deconnexion"),
 ]

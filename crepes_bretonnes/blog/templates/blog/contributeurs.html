@@ -7,5 +7,14 @@
 <body>
     <h1>Les contributeurs</h1>
     <p>Ce sont eux qui écrivent les articles que vous appréciez tant...</p>
+    {% for contributeur in contributeurs %}
+        <h2>{{ contributeur.nom }}</h2>
+        Adresse : {{ contributeur.adresse|linebreaks }}<br/>
+        <img src="{{ contributeur.photo.url }}"/>
+    {% endfor %}
+
+    <h2>Vous inscrire</h2>
+    <p>Vous voulez participer à notre grande aventure ? Cliquez <a href="{% url "inscription" %}">ici</a>.</p>
+
 </body>
 </html>

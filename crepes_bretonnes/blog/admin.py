@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Categorie, Article
+from .models import Categorie, Article
 
 
 class ArticleAdmin(admin.ModelAdmin):
@@ -9,6 +9,7 @@ class ArticleAdmin(admin.ModelAdmin):
     date_hierarchy = 'date'
     ordering = ('date',)
     search_fields = ('titre', 'contenu')
+    prepopulated_fields = {'slug': ('titre',), }
 
 
     # Configuration du formulaire d'édition
@@ -16,7 +17,7 @@ class ArticleAdmin(admin.ModelAdmin):
         # Fieldset 1 : meta-info (titre, auteur…)
         ('Général', {
             'classes': ['collapse', ],
-            'fields': ('titre', 'auteur', 'categorie')
+            'fields': ('titre', 'auteur', 'categorie','slug')
         }),
         # Fieldset 2 : contenu de l'article
         ('Contenu de l\'article', {

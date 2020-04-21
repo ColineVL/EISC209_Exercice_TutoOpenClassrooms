@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nouvel utilisateur</title>
+</head>
+<body>
+    <h1>Remplissez le formulaire pour vous inscrire.</h1>
+    {% if sauvegarde %}
+        <p>Vous avez bien été enregistré.</p>
+    {% endif %}
+
+    <p>
+        <form method="post" enctype="multipart/form-data" action='{% url "new_user" %}'>
+           {% csrf_token %}
+           {{ form.as_p }}
+           <input type="submit"/>
+        </form>
+    </p>
+
+
+</body>
+</html>

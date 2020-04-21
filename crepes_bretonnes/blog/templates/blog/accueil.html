@@ -7,8 +7,12 @@
 <body>
     <h1>Bienvenue sur le blog des crêpes bretonnes !</h1>
     <h3>Les articles</h3>
-    <p>Vous pouvez cliquer <a href="{% url "tousArticles" %}">ici</a> pour voir la liste de tous les articles.</p>
+    <p>Vous pouvez cliquer <a href='{% url "tousArticles" %}'>ici</a> pour voir la liste de tous les articles.</p>
     <h3>Les reporters</h3>
-    <p>En cliquant <a href="{% url "contributeurs" %}">ici</a> vous pourrez voir les bouilles de nos contributeurs.</p>
+    <p>En cliquant <a href='{% url "contributeurs" %}'>ici</a> vous pourrez voir les bouilles de nos contributeurs.</p>
+    <h3>Pour proposer un article, c'est par ici !</h3>
+    <p>Cliquez <a href='{% url "proposer_article" %}'>là</a>.</p>
+    <h3>Vous voulez vous créer un compte ?</h3>
+    <p>C'est par <a href='{% url "new_user" %}'>ici</a> !</p>
 </body>
 </html>
