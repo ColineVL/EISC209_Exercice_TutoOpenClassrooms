@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
+from django.contrib.auth import views as auth_views
 from django.urls import path
 from . import views
 
@@ -31,4 +31,7 @@ urlpatterns = [
 
     path('connexion', views.connexion, name='connexion'),
     path('deconnexion', views.deconnexion, name="deconnexion"),
+
+
+    #path(r'^connexion$', auth_views.login, {'template_name': 'auth/connexion.html'}),
 ]

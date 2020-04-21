@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
 from django.shortcuts import redirect
-from datetime import datetime
+
 
 from django.urls import reverse
 
@@ -68,7 +68,7 @@ def contact_us(request):
     return render(request, 'blog/contactUs.html', locals())
 
 
-@login_required(login_url='blog/connexion')
+#@login_required(login_url='blog/connexion')
 def proposer_article(request):
     form = ArticleForm(request.POST or None)
     if form.is_valid():
