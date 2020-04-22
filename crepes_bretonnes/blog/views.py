@@ -68,7 +68,7 @@ def contact_us(request):
     return render(request, 'blog/contactUs.html', locals())
 
 
-#@login_required(login_url='blog/connexion')
+@login_required(login_url='blog/connexion')
 def proposer_article(request):
     form = ArticleForm(request.POST or None)
     if form.is_valid():
