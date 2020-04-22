@@ -12,7 +12,7 @@
     {% endif %}
 
     {% if user.is_authenticated %}
-    Vous êtes connecté, {{ user.username }} !
+    Vous êtes connecté, {{ user.username }} ! <a href='{% url "deconnexion" %}'>Se déconnecter.</a><br>
     {% else %}
 
     <form method="post" action='{%  url "connexion" %}'>
@@ -21,6 +21,6 @@
         <input type="submit" value="Se connecter" />
     </form>
     {% endif %}
-
+<footer><a href='{% url "accueil" %}'>Retour à l'accueil.</a></footer>
 </body>
 </html>

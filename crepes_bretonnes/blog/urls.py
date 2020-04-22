@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib.auth import views as auth_views
 from django.urls import path
 from . import views
+from django.conf.urls import url
 
 urlpatterns = [
     path('', views.accueil),
@@ -29,9 +30,8 @@ urlpatterns = [
     path('contributeurs/inscription', views.inscription, name="inscription"),
     path('accueil/newUser', views.new_user, name="new_user"),
 
-    path('connexion', views.connexion, name='connexion'),
-    path('deconnexion', views.deconnexion, name="deconnexion"),
-
+    url(r'^connexion$', views.connexion, name='connexion'),
+    url(r'^deconnexion$', views.deconnexion, name='deconnexion'),
 
     #path(r'^connexion$', auth_views.login, {'template_name': 'auth/connexion.html'}),
 ]

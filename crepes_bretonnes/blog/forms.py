@@ -52,6 +52,9 @@ class NewUserForm(forms.Form):
     avatar = forms.ImageField()
     signature = forms.CharField()
     inscrit_newsletter = forms.BooleanField()
+    # class Meta:
+    #     model = Profil
+    #     fields = '__all__'
 
 
 class ConnexionForm(forms.Form):
