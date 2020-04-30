@@ -141,3 +141,12 @@ def connexion(request):
 def deconnexion(request):
     logout(request)
     return redirect(reverse(connexion))
+
+
+def modif(request, id):
+    article = Article.objects.get(id=id)
+    # form = ArticleForm(instance=article)
+    form = ArticleForm(request.POST, instance=article)
+    if form.is_valid():
+        form.save()
+    return render(request, 'blog/modif.html', locals())

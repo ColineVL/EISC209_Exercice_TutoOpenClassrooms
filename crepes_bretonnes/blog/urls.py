@@ -29,6 +29,7 @@ urlpatterns = [
     path('accueil/proposerArticle', views.proposer_article, name='proposer_article'),
     path('contributeurs/inscription', views.inscription, name="inscription"),
     path('accueil/newUser', views.new_user, name="new_user"),
+    path('modif/<int:id>',views.modif, name="modif"),
 
     url(r'^connexion$', views.connexion, name='connexion'),
     url(r'^deconnexion$', views.deconnexion, name='deconnexion'),

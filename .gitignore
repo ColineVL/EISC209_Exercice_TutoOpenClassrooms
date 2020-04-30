@@ -1,5 +1,6 @@
 *.pyc
 .idea/
 venv1/
+venv/
 sqlite-dll-win64-x64-3310100/
 crepes_bretonnes/db.sqlite3
